@@ -1,1 +1,22 @@
-<p>page-list works!</p>
+<table class="table is-striped" *ngIf="posts.length > 0">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>title</th>
+    <th>wordcount</th>
+    <th>snippet</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of posts;let i=index">
+    <td>{{i + 1}}</td>
+    <td>
+      <a [href]="'https://en.wikipedia.org/?curid='+ item.pageid" target="_blank">
+        {{item.title}}
+      </a>
+    </td>
+    <td>{{item.wordcount}}</td>
+    <td [innerHtml]="item.snippet"></td>
+  </tr>
+  </tbody>
+</table>
