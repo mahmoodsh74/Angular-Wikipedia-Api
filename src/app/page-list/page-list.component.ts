@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {WikipediaResponse} from "../_services/wikipedia.service";
 
 @Component({
   selector: 'app-page-list',
@@ -6,5 +7,5 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./page-list.component.css']
 })
 export class PageListComponent {
-  @Input() posts = [];
+  @Input() posts:WikipediaResponse[] = [];
 }
